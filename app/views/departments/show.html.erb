@@ -16,7 +16,7 @@
 
 <hr>
 
-<form action="/modify_department/<%= @department.id %>" method="post">
+<form action="/modify_department/<%= @department%>" method="post">
   <div>
     <label for="name_box">
       Name
@@ -44,7 +44,7 @@
     Number of courses
   </dt>
   <dd>
-    <%= Course.where({ :department_id => @department.id }).count %>
+    <%= Course.where({ :department_id => @department}).count %>
   </dd>
 
 </dl>
