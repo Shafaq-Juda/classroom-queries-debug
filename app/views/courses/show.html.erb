@@ -22,7 +22,7 @@
       Title
     </label>
 
-    <input type="text" id="title_box" name="query_title">
+    <input type="text" id="title_box" name="query_title" value="<%= @course.title %>">
   </div>
 
   <div>
@@ -81,13 +81,13 @@
   <dd>
     <% department = Department.where({ :id => @course.department_id }).at(0) %>
     <a href="/departments/<%= department.id %>"><%= department.name %></a>
-  </dd>
+  </dd> 
 
   <dt>
     Number of enrolled students
   </dt>
   <dd>
-    <%= Enrollment.where({ :course_id => @course.id }) %>
+    <%= Enrollment.where({ :course_id => @course.id }).length %>
   </dd>
 </dl>
 
